@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://f8nopwi7wxvy"]
+
+[ext_resource type="Script" path="res://SBF-WIP/Scene/character_select/character_select.gd" id="1_63wnm"]
+[ext_resource type="Texture2D" uid="uid://54kjy3sbwe6" path="res://Assets/Sprites/SBFCharacterSelect-2.png.png" id="2_q1y0e"]
+[ext_resource type="Texture2D" uid="uid://swjiqqhho5q4" path="res://Assets/Character Portraits/Failboat-1.png.png" id="3_tja6p"]
+[ext_resource type="Texture2D" uid="uid://c86vtqus6j6l6" path="res://Assets/Sprites/SBFCharacterSelect-1.png_1.png" id="4_xblve"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = 8.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_63wnm")
+
+[node name="SbfCharacterSelect-2_png" type="Sprite2D" parent="."]
+position = Vector2(596, 324)
+scale = Vector2(0.4576, 0.421333)
+texture = ExtResource("2_q1y0e")
+
+[node name="Failboat-1_png" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.360784)
+position = Vector2(507, 105)
+scale = Vector2(0.137, 0.118)
+texture = ExtResource("3_tja6p")
+
+[node name="Fail" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = -8.0
+offset_right = 600.0
+offset_bottom = 216.0
+texture_normal = ExtResource("3_tja6p")
+texture_pressed = ExtResource("3_tja6p")
+texture_hover = ExtResource("3_tja6p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Fail_Preview" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(128, 440)
+scale = Vector2(0.1825, 0.1975)
+texture = ExtResource("3_tja6p")
+
+[node name="SbfCharacterSelect-1_png1" type="Sprite2D" parent="."]
+position = Vector2(591.5, 318)
+scale = Vector2(0.4612, 0.429333)
+texture = ExtResource("4_xblve")
+
+[connection signal="mouse_entered" from="Fail" to="." method="_on_fail_mouse_entered"]
+[connection signal="mouse_exited" from="Fail" to="." method="_on_fail_mouse_exited"]
+[connection signal="pressed" from="Fail" to="." method="_on_fail_pressed"]
